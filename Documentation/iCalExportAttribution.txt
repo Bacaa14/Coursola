@@ -1,0 +1,4 @@
+For the exporting feature in our program, as written in ExportServlet.java, we employed the iCal4j Java API.
+This is found at http://ical4j.sourceforge.net/introduction.html.  Furthermore, for the actual file download, 
+we modified some example code found at the following link: 
+http://www.java-forums.org/blogs/servlet/668-how-write-servlet-sends-file-user-download.html.

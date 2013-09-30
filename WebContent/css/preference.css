@@ -1,0 +1,62 @@
+.lightGreen {
+	color: #4F4FD9;
+}
+
+a {
+	font-family: serif;
+	color: black;
+}
+
+select,input,button,textarea {
+	color: black;
+}
+
+table {
+	margin: 0 auto;
+	width: auto;
+	table-layout:fixed;
+}
+
+table.main th {
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+table.main tr {
+	border-bottom: 1px solid black;
+}
+
+#login {
+	position: absolute;
+	top: 0px;
+	padding: 18px 6% 60px 6%;
+	margin: 0 0 0 0;
+	background: rgb(247, 247, 247);
+	border: 1px solid rgba(147, 184, 189, 0.8);
+	-webkit-box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px
+		5px rgba(208, 223, 226, 0.4) inset;
+	-moz-box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px
+		rgba(208, 223, 226, 0.4) inset;
+	box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px
+		rgba(208, 223, 226, 0.4) inset;
+	-webkit-box-shadow: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#wrapper {
+	width: auto;
+	right: 0px;
+	min-height: 560px;
+	margin: 0px auto;
+	position: relative;
+}
+
+#legend th {
+	
+}
+
+div.but {
+	width: auto;
+	margin: 0px auto;
+}

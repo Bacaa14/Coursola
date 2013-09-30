@@ -1,0 +1,95 @@
+							OverView
+
+
+Corsola is a pretty straightforward web application. The home page is the Log In page
+which consists of two input fields for a username/email and a password. If you have
+already registered (or you are already in the user database) you can proceed from this 
+page. In addition, you can view our "About Us" page detailing the creators of Corsola,
+or you can proceed to scheduler as guest from the ribbon at the top of the screen.
+If you are not registered, at the bottom of the form you can register by clicking
+"Join us". You can then enter your username, email, and password so that you become
+a member and that you can successfully login from then on. The Sign Up button will
+enter your information into the user database. We thought that this functionality 
+was very important because we want to actually implement this into WebAdvisor and
+the current registration process for students. We can hopefully change our database
+so that it is the one that WebAdvisor currently uses for seamless transition.
+
+After successfully registering or logging in, you are directed to a page where you can 
+click a button to begin scheduling, or to view your course history. Currently, we
+were unable to fully implement viewing past course history, so the button will lead
+you to a page where you can pick a term but you will not see your history. With more
+time, we would modify it such that a user can make a schedule, save it as an object,
+and then would be able to view it using this course history feature. Other than that, 
+on the registered page, you can click the button to begin scheduling (which will take
+you to the page that "proceed to scheduler as guest") would take you to. Our Preferred
+Courses page has a listing of all available courses for that upcoming term. Users can 
+click the column titles to sort by their respective element. Users can scroll through
+the list and check the box on the right if it is a course that they are thinking about
+taking ("preferred courses"). Once they have selected a few courses, they can either 
+clear all those that they have selected or proceed by hitting the "Submit Preferred
+Courses" button.
+
+Users will be taken to a screen with a calendar and their courses listed as boxes with 
+different colors. When they hover over a course, the course meeting times will appear
+in the calendar at their scheduled times. When they stop hovering over, the meeting 
+times will disappear. If they click that course, the meeting times will be embedded in
+the schedule until they unclick the course. A neat feature we implemented is that once
+a user clicks on a course, all courses that conflict with that course will have a dashed
+border around their boxes and the user will be unable to select that course. The conflicting
+course will hover in the schedule with red dash marks around it so the user can see
+when the confict occurs. When deselecting their selected course, all conflicts will 
+disappear and the user can then select at will. Once the user has a full schedule with no
+conflicts, they can either revise their list (taking them back to the previous page), or 
+export the schedule to iCal. Or they can simply write down the course names that they know
+will not conflict with each other. Given more time, we could implement the save feature so 
+that if a user fails to get into a course that they want, they can have a back up schedule
+saved that they can use as a guideline.
+
+Corsola gives users an intuitive course selection alternative that enables them to actively
+view and match courses that they are interested in taking. It is visually pleasing and much
+simpler than drawing or creating your own schedules. It easily shows when conflicts arise
+and is quite effective in selecting the courses that you can register for. The future for
+Corsola is bright, as save/view schedule features will be implemented, as well as integrating
+it into the actual WebAdvisor/Registration process that W&L's registrar uses.
+
+
+							RegisterServlet
+
+The RegisterServlet opens a connection to the hopper corsola database that we have created.
+It gets the username, email, password, and confirmed password that the user enters on the
+Register page and saves them as variables. It then checks with the database if the username
+or email is already registered or not, and will print out an appropriate error message. If
+the credentials are not in the database, it will check if the password and the 
+confirm password match each other. If they do, it will use the prepared statements to insert
+the user's information into the database, and set the user authentication boolean to true 
+(so the user is logged in). It will then direct you to the registeredPage.jsp page.
+
+							LoginServlet
+
+Very similar to the RegisterServlet, the LoginServlet opens a connection to the same database
+and stores the username/email and password that the user entered as variables. It goes through
+each entry in the database to see if the username or email and password both have a match with
+one of the records. If they do not both match, an error message will be printed saying they
+are not an authenticated user and must register. If they do both match, the LoginServlet will
+set the authenticated boolean to true and direct them to the registeredPage.jsp.
+
+							registeredPage.jsp
+							
+This page is a simple page that gives the user their account details and two options. They can
+begin scheduling immediately, or they can view course history. As mentioned above, view course
+history will allow users to view schedules that they have already made and saved, although it
+is not implemented yet. Ideally, users would save their list of scheduled courses as a schedule
+object (or just as a list), and in View Course History they can select that saved schedule to
+view it in a calendar. The Begin Scheduling button will direct users to the preference.jsp page
+where they can begin to select their list of preferred courses.
+
+							ViewScheduleServlet
+							
+This servlet is the beginning of the View Course History implementation that is mentioned above.
+It accesses the course_list table in our database that will contain the records of all the 
+schedules that would have been saved by our users. This table would consist of users_id, list_id,
+course_list, and a boolean for preferred or selected. This way, each user will have a unique
+ID for every schedule they have saved, along with the course name text, and a boolean meaning
+that they successfully registered for those courses, or that it is just a preferred list of
+courses. This feature will be a nice, and important, one, but it was not the highest of
+priorities in our project. Hence, it still needs work.

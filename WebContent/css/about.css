@@ -1,0 +1,39 @@
+.about {
+	padding-left: 25px;
+}
+
+.about table {
+	table-layout: fixed;
+	width: 84%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.about td {
+	padding: 40px;
+	overflow: hidden;
+	width: 42%;
+}
+
+.about h1 {
+	font-size: 30px;
+	padding-bottom: 5px;
+}
+
+.about h2 {
+	font-size: 16px;
+	padding-bottom: 15px;
+	font-style: italic;
+}
+
+.about p {
+	text-align: left;
+}
+
+.about img {
+	height: 160px;
+	display: inline;
+	margin: 3px;
+	float: left;
+	padding-right: 5px;
+}
